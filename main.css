@@ -21,6 +21,23 @@ footer{
 }
 
 a {
-    color: darkgreen; 
+    color: green; 
     text-decoration-line: none;
 }
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    color: blue; 
+    text-decoration-line: underline;
+    background-color: white;
+    font-weight: bold;
+}
+
+a:active {
+    color: pink;
+    background-color: green;
+}
+
