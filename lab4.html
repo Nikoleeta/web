@@ -16,6 +16,24 @@
             height: 250px;
             overflow-y: auto;
             overflow-x: hidden;
+            position: relative;
+            background: linear-gradient(#ccf,#ddf);
+        }
+
+        .second{
+            left: 380px;
+            top: 120px;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .second:hover{
+            left: 0%;
+            top: 0%;
+            width: 500px;
+            height: 500px;
+            background: azure;
+            transition-duration: 2s;
         }
     </style>
 </head>
@@ -38,7 +56,7 @@
         колёсиках? Казалось бы, ерунда. Но, скажу вам по секрету, всё это важно.
         </div>
 
-        <div>
+        <div class="second">
         Во второй главе я подробно рассказываю о том, откуда взялись акции и
         корпорации, чтобы вы поняли базовую идею организации современной
         большой компании – типа Apple или Google. 
