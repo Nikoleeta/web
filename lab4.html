@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Косарева Николета Вячеславовна Лабораторная 4.</title>
     <link rel="stylesheet" href="main.css">
+    
     <style>
         main div{
             margin: 20px;
@@ -23,7 +24,7 @@
         .second{
             left: 380px;
             top: 120px;
-            position: fixed;
+            position: relative;
             z-index: 1;
         }
 
@@ -55,6 +56,60 @@
         main{
             margin-left: 320px;
         }
+
+        .foto{
+            position:relative;
+            top: 0;
+            left: 0;
+            border:none;
+            background: none;
+            overflow-x: none;
+            overflow-y: none;
+            height: 100%;
+            width: 230%;
+        }
+
+        .image1{
+            position: relative;
+            top: 0;
+            left: 0;
+            
+        }
+        
+        .image2{
+            position: absolute;
+            top: 140px;
+            left: 280px;
+            border-radius: 290px;
+            height: 20%;
+            
+        }
+        
+        .image3{
+            position: absolute;
+            top: 70px;
+            left: 320px;
+            border-radius: 290px;
+            height: 30%;
+        }
+
+        .image4{
+            position: absolute;
+            top: 0px;
+            left: 350px;
+            border-radius: 290px;
+            height: 40%;
+        }
+
+        .text{
+            color: red;
+            position: absolute;
+            top: 30px;
+            left: 385px;
+            font-size: 30px ;
+        }
+
+
 
     </style>
 </head>
@@ -93,6 +148,9 @@
         </div>
     </aside>
     <main>
+
+        
+
         <div>
         В первой главе я задаю тон всей книге: это в первую очередь 
         развлечение для скучающих гопников-интеллектуалов.
@@ -131,8 +189,21 @@
         сплиты? Что андеррайтеры называют красной селёдкой и чем они похожи 
         на организаторов концерта Стаса Михайлова? Все эти тайны будут раскрыты.
         </div>
-        
-    </main>
+
+        <div class="foto">
+            <img class="image1"
+            src="komix.jpg" height="500px">
+            <img class="image2" 
+            src="clooud.png" height="100px">
+            <img class="image3" 
+            src="clooud.png" height="100px">
+            <img class="image4" 
+            src="clooud.png" height="100px">
+            <p class="text">спасаю мир</p>
+        </div>
+
+        </main>
+
 
     <footer style="position: fixed;
     top: 95%;
