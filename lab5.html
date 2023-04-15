@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Косарева Николета Вячеславовна. Лабораторная работа 5</title>
     <link rel="stylesheet" href="main.css">
+   
+   <script>
+    function ShowSum() {
+            let a=5154;
+        let b=7891;
+        let result = a+b;
+        alert ('сумма ' + a + ' и ' + b + ' равна ' + result);
+    }
+
+   </script>
+
+
+   <style>
+
+        .message{
+            height: 25px;
+            width: 220px; 
+            background:white; 
+            border: 1px solid; 
+            border-radius: 10px; 
+            border-color: blue;
+            display:inline-block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 5px;
+            padding-top:9px;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -13,7 +44,14 @@
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
-    
+    <main>
+        <div class="message" onclick="ShowSum()">
+            Сколько будет 5154+7891?
+        </div>
+        <div class="message">
+            Узнать, кто автор страницы
+        </div>
+    </main>
     <footer>
         &copy; Косарева Николета, ФБИ-12, 2 курс, 2023
     </footer>
