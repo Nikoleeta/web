@@ -55,6 +55,13 @@
         alert ('результат деления ' + a + ' и ' + b + ' равен ' + result);
     }
 
+    function changeOutput(buttonNum,backColor,textColor) {
+        let output = document.getElementById('output');
+        output.innerHTML='нажата кнопка'+ buttonNum;
+        output.style.backgroundColor= backColor;
+        output.style.color= textColor;
+    }
+
    </script>
 
 
@@ -75,6 +82,13 @@
             padding-top:9px;
             cursor: pointer;
         }
+        
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+
     </style>
 
 </head>
@@ -85,30 +99,30 @@
     </header>
 
     <main>
-        <label>Первое число: <input type="number" 
-            value="5154" id="numberA"></label><br>
-        <label>Второе число: <input type="number" 
-            value="7891" id="numberB"></label><br>
+        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
 
-        <div class="message" onclick="ShowSum()">
-            Найти сумму чисел
+        <div class="message" onclick="ShowSum()"> Найти сумму чисел</div>
+        <div class="message" onclick="showdiff()">Найти разность чисел</div>
+        <div class="message" onclick="showprod()">Найти произведение чисел</div>
+        <div class="message" onclick="showdiv()">Результат деления чисел</div>
+        <div class="message" onclick="ShowAuthor()">Узнать, кто автор страницы</div>
+   
+        <div>
+            <input type="button" value="кнопка 1" 
+            onclick="changeOutput(1,'red','yellow')">
+
+            <input type="button" value="кнопка 2"
+            onclick="changeOutput(2,'yellow','black')">
+
+            <input type="button" value="кнопка 3"
+            onclick="changeOutput(3,'purple','white')">
+            
+            <input type="button" value="кнопка 4"
+            onclick="changeOutput(4,'gray','red')">
         </div>
 
-        <div class="message" onclick="showdiff()">
-            Найти разность чисел
-        </div>
-
-        <div class="message" onclick="showprod()">
-            Найти произведение чисел
-        </div>
-
-        <div class="message" onclick="showdiv()">
-            Результат деления чисел
-        </div>
-
-        <div class="message" onclick="ShowAuthor()">
-            Узнать, кто автор страницы
-        </div>
+    <div id="output"></div>
     </main>
 
     <footer onclick="Foote()">
