@@ -62,24 +62,25 @@
         output.style.color= textColor;
     }
 
-    function summary(){
-        let inputE=document.getElementById('apples');
-        let inputF=document.getElementById('pears');
-        let inputG=document.getElementById('oranges');
-        let inputH=document.getElementById('melon');
-        
+    function summ(){
+        let inputC=document.getElementById('apples');
+        let inputD=document.getElementById('pears');
+        let inputE=document.getElementById('oranges');
+        let inputF=document.getElementById('melon');
+        let inputI=document.getElementById('watermelon');
+
+        let c=parseInt(inputC.value);
+        let d=parseInt(inputD.value);
         let e=parseInt(inputE.value);
         let f=parseInt(inputF.value);
-        let g=parseInt(inputG.value);
-        let h=parseInt(InputH.value);
-        let res = a*100+b*80+c*150+d*300;
-        alert ('сумма' + res);
+        let i=parseInt(inputI.value);
+        
+        let summa=c*100+d*80+e*150+f*300+i*500;
+
+        let out=document.getElementById('out');
+        out.innerHTML='общая сумма ' + summa + ' рублей';
     }
 
-    function outt(){
-        let oute=document.getElementById('out');
-        out.innerHTML='общая сумма:'+ result;
-    }
 
    </script>
 
@@ -132,10 +133,11 @@
 
         #out{
             border: 1px solid;
-            width: 150px;
+            width: 200px;
             height: 20px;
-            margin-left: 75px;
+            margin-left: 50px;
             margin-top: 5px;
+            font-size: 12px;
         }
     </style>
 
@@ -188,10 +190,13 @@
             <label class="naimen">Дыни (300р/шт): 
             <input type="number" id="melon"></label><br>
 
-            <input type="button" value="Рассчитать" 
-            onclick="outt()">
+            <label class="naimen">Арбуз (500р/шт): 
+            <input type="number" id="watermelon"></label><br>
 
-            <div id="out" value="общая цена:"></div>
+            <input type="button" value="Рассчитать" 
+            onclick="summ()">
+
+            <div id="out"></div>
         </div>
 
 
