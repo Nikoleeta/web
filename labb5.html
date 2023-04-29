@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <script>
+        function Show() {
+        let inputA=document.getElementById('numberA');
+        
+        let a=parseInt(inputA.value);
+        let a1 =parseInt(a/100);
+        let a2 = (a/10);
+        let a4= parseInt(a2%10);
+        let a3= a%10;
+
+        result=a1+a3+a4;
+        result2=a1*a3*a4;
+        alert ('сумма '+result +' произведение '+ result2);
+
+    }
+
+    function posl() {
+        let inputB=document.getElementById('numberB');
+        let inputC=document.getElementById('numberC');
+        let inputD=document.getElementById('numberD');
+
+        let b=parseInt(inputB.value);
+        let c=parseInt(inputC.value);
+        let d=parseInt(inputD.value);
+
+        let  arr= [];
+
+        for (let i=1; i<=d; i=i+1) {
+            let an = b + c*(i-1);
+            arr.push(an);
+        }
+        alert(arr);
+    }
+    </script>
+
+
+<body>
+    
+    <label>Введите число от 100 до 999: <input type="number" value="" id="numberA"></label><br>
+    <input type="button" value="кнопка 1" onclick="Show()">
+<div>
+    <label>Введите первые элемент: <input type="number" value="" id="numberB"></label><br>
+    <label>Введите инкремент: <input type="number" value="" id="numberC"></label><br>
+    <label>Введите количество элементов: <input type="number" value="" id="numberD"></label><br>
+    <input type="button" value="вывести последовательность" onclick="posl()">
+</div>
+
+</body>
+</html>
