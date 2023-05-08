@@ -29,6 +29,19 @@
         text-align: left;
         padding: 30px;
     }
+
+    .color{
+        height: 200x;
+        width: 180px;
+        border: 1px solid;
+        border-radius: 500px;
+        border-color: azure;
+        color:black;
+        margin: 10px auto;
+        text-align: center;
+        padding: 30px;
+        background-color: yellow;
+    }
 </style>
 
 <script>
@@ -87,8 +100,42 @@
         screens[0].style.display='block';
     }
 
+    function changecolor(div){
+        if (div.style.backgroundColor=='yellow'){
+            div.style.backgroundColor='red';
+            div.style.color='pink';
+            document.getElementById('color-name').innerHTML='красный';
+            document.getElementById('font-color').innerHTML='розовый';
 
-    
+        }
+        else if (div.style.backgroundColor=='red'){
+            div.style.backgroundColor='blue';
+            div.style.color='white';
+            document.getElementById('color-name').innerHTML='синий';
+            document.getElementById('font-color').innerHTML='белый';
+        }
+
+        else if (div.style.backgroundColor=='blue'){
+            div.style.backgroundColor='brown';
+            div.style.color='aqua';
+            document.getElementById('color-name').innerHTML='коричневый';
+            document.getElementById('font-color').innerHTML='бирюзовый';
+        }
+        else if (div.style.backgroundColor=='brown'){
+            div.style.backgroundColor='pink';
+            div.style.color='blue';
+            document.getElementById('color-name').innerHTML='розовый';
+            document.getElementById('font-color').innerHTML='синий';
+        }
+        else {
+            div.style.backgroundColor='yellow';
+            div.style.color='black';
+            document.getElementById('color-name').innerHTML='желтый';
+            document.getElementById('font-color').innerHTML='черный';
+        }
+
+    }
+
 </script>
 
 </head>
@@ -149,6 +196,13 @@
                 <ol>
             </div>
         </div>
+
+        <div class="color" ondblclick="changecolor(this)">
+            цвет: <span id="color-name" >желтый</span> <br>
+            цвет текста: <span id="font-color">черный</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+
     </main>
 
     <footer>
