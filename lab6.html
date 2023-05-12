@@ -185,6 +185,17 @@
         }
     }
 
+    function sizee(size){
+        let issize=parseInt(getComputedStyle(size).width);
+        if (issize<1000){
+            size.style.width=issize+50+'px';
+        }
+        else{
+            size.style.width='100px';
+        }
+        
+    }
+
     function filter(){
         let color=document.getElementById('wear-color').value;
         let type=document.getElementById('wear-type').value;
@@ -289,6 +300,10 @@
 
         <div class="shelk" id= "changeplace" onclick="move(this)">
             <span>щелкни на меня, я двигаюсь</span>
+        </div>
+
+        <div class="size" id= "changesize" onclick="sizee(this)">
+            <span>щелкни на меня, я расширяюсь</span>
         </div>
      
         <div>
