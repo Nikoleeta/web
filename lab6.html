@@ -43,7 +43,24 @@
         background-color: yellow;
     }
 
-    .blok {
+    .shelk {
+        width: 150px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border: 1px solid;
+        border-radius: 20px;
+        height: 50px;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 14px;
+        background-color:darkseagreen;
+        cursor: pointer;
+        position:relative;
+        transition: all 2s;
+        transform: rotate(0);
+    }
+
+    .size {
         width: 100px;
         margin-left: 5px;
         margin-bottom: 10px;
@@ -154,6 +171,20 @@
 
     }
 
+    let change=false;
+    function move(shelk){
+        if (change == false) {
+            shelk.style.left='90%';
+            shelk.style.transform='rotate(0)';
+            change=true;
+        }
+        else {
+            shelk.style.left='10px';
+            shelk.style.transform='rotate(4turn)';
+            change=false;
+        }
+    }
+
     function filter(){
         let color=document.getElementById('wear-color').value;
         let type=document.getElementById('wear-type').value;
@@ -189,12 +220,8 @@
         else if (color=='черный' && type=='майка') {
             wear.src='black-m.jpg' ;
         }
-
-
     }
-
 </script>
-
 </head>
 <body>
     <header>
@@ -260,7 +287,10 @@
             Сделайте двойной щелчок, чтобы сменить
         </div>
 
-
+        <div class="shelk" id= "changeplace" onclick="move(this)">
+            <span>щелкни на меня, я двигаюсь</span>
+        </div>
+     
         <div>
             цвет одежды:
             <select id="wear-color">
