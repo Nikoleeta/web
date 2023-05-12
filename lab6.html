@@ -42,6 +42,24 @@
         padding: 30px;
         background-color: yellow;
     }
+
+    .blok {
+        width: 100px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border: 1px solid;
+        border-radius: 20px;
+        height: 50px;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 14px;
+        background-color:darkseagreen;
+        cursor: pointer;
+        position:relative;
+        transition-duration: 2s;
+    }
+
+
 </style>
 
 <script>
@@ -136,6 +154,45 @@
 
     }
 
+    function filter(){
+        let color=document.getElementById('wear-color').value;
+        let type=document.getElementById('wear-type').value;
+        let wear=document.getElementById('wear');
+        wear.style.width='35%';
+        wear.style.height='35%';
+
+        if (color=='красный' && type=='футболка') {
+            wear.src='red-f.jpg';
+        
+        }
+        else if (color=='красный' && type=='поло') {
+            wear.src='red-p.jpg';
+        }
+        else if (color=='красный' && type=='майка') {
+            wear.src='red-m.jpg';
+        }
+        else if (color=='белый' && type=='майка') {
+            wear.src='white-m.jpg';
+        }
+        else if (color=='белый' && type=='футболка') {
+            wear.src='white-ff.jpg';
+        }
+        else if (color=='белый' && type=='поло') {
+            wear.src='white-p.jpg';
+        }
+        else if (color=='черный' && type=='поло') {
+            wear.src='black-p.jpg';
+        }
+        else if (color=='черный' && type=='футболка') {
+            wear.src='black-f.jpg';
+        }
+        else if (color=='черный' && type=='майка') {
+            wear.src='black-m.jpg' ;
+        }
+
+
+    }
+
 </script>
 
 </head>
@@ -203,6 +260,28 @@
             Сделайте двойной щелчок, чтобы сменить
         </div>
 
+
+        <div>
+            цвет одежды:
+            <select id="wear-color">
+                <option>красный</option>
+                <option>белый</option>
+                <option>черный</option>
+            </select><br>
+
+            тип одежды:
+            <select id="wear-type">
+                <option>футболка</option>
+                <option>поло</option>
+                <option>майка</option>
+            </select><br>
+
+            <button onclick="filter()">Ok</button><br>
+
+            <img id="wear">
+
+
+        </div>
     </main>
 
     <footer>
