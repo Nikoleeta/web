@@ -81,6 +81,56 @@
             }
         }
 
+        
+        function stock(){
+            let date =['05.05.2023', '08.05.2023','10.05.2023','11.05.2023',
+            '12.05.2023','15.05.2023','16.05.2023','17.05.2023','18.05.2023',
+            '19.05.2023' ];
+            let stock= [19000.00, 19098.00,19224.00, 19332.00, 19216.00,
+        19358.00, 19698.00, 19594.00, 18998.00, 19018];
+            let table=document.getElementById('stock');
+            let difference=[];
+
+            for (let i=0;i<10; i++){
+                    let tr=document.createElement('tr');
+                    let td=document.createElement('td');
+                    let td2=document.createElement('td');
+                    let td3=document.createElement('td');
+                    
+                    difference[0]='';
+                    for (let i=1;i<10;i++){
+                        difference[i]=stock[i]-stock[i-1];
+                    }
+                    td.style.border='1px solid';
+                    td2.style.border='1px solid';
+                    td3.style.border='1px solid';
+                    
+                    td.innerHTML=date[i];
+                    td2.innerHTML=stock[i];
+                    td3.innerHTML=difference[i];
+
+                    tr.appendChild(td);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    table.appendChild(tr);
+            }
+
+            let sum=0;
+            for (let i=0; i<10; i++){
+                sum=sum+stock[i];
+            }
+            let average=sum/10;
+            document.getElementById('average').innerHTML=
+            'среднее значение: '+ average; 
+           
+            let max=Math.max(...stock);
+            document.getElementById('max').innerHTML='max: '+ max; 
+
+            let min=Math.min(...stock);
+            document.getElementById('min').innerHTML='min: '+ min; 
+
+        }
+    
     </script>
 </head>
 
@@ -113,8 +163,8 @@
             <input type="number" id="circ" value="5"
             placeholder="введите число кругов"></label><br>
     
-            <button onclick="create()">Красное/зеленое</button>
-            <div class='but' id="butt"></div>
+        <button onclick="create()">Красное/зеленое</button>
+        <div class='but' id="butt"></div>
         
         <button onclick="increase()">
             таблица умножения на 52</button>
@@ -122,6 +172,9 @@
             
         <button onclick="stock()">Курс акций Акрон</button>
         <div id="stock"></div>
+        <div id="average"></div>
+        <div id="max"></div>
+        <div id="min"></div>
     </main>
 
     <footer>
