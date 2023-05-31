@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Росгосстрах|Финансовые показатели</title>
+    <script>
+
+    function Vycheslenia(){
+        let date =['03.04', '04.04','05.04','06.04',
+        '07.04','10.04','11.04','12.04','13.04','14.04','17.04','18.04',
+        '19.04','20.04', '21.04', '24.04', '25.04', '26.04', '27.04', '28.04' ];
+        let stock= [0.1998, 0.2034, 0.2198, 0.2298, 0.2252, 0.2304, 0.2264,
+        0.2306, 0.2290, 0.2280, 0.2256, 0.2520, 0.2410, 0.2376, 0.2426, 0.2398,
+        0.2292, 0.2300, 0.2300, 0.2200];
+        let table=document.getElementById('stock');
+
+            for (let i=0;i<20; i++){
+                    let tr=document.createElement('tr');
+                    let td=document.createElement('td');
+                    let td2=document.createElement('td');
+    
+                    td.style.border='1px solid';
+                    td2.style.border='1px solid';
+                    
+                    td.innerHTML=date[i];
+                    td2.innerHTML=stock[i];  
+            }
+            let sum=0;
+            for (let i=0; i<20; i++){
+                sum=sum+stock[i];
+            }
+            let average=sum/10;
+            for (let i=0;i<20; i++){
+                s=(stock[i]+average)/date.length;
+            }
+            let qwadrat=Math.sqrt(s);
+            qw=Math.round(qwadrat*Math.pow(10,5))/Math.pow(10,5);
+            document.getElementById('sre').innerHTML=qw;
+    
+            let max=Math.max(...stock);
+            document.getElementById('max').innerHTML= max; 
+
+            let min=Math.min(...stock);            
+            document.getElementById('min').innerHTML=min; 
+    }
+
+    </script>
+</head>
+<style>
+    header{
+        margin-left:-10px;
+        margin-right:20px;
+        margin-bottom: -30px;
+        padding-top: 50px;
+        height:70px;
+        margin-top: -15px;   
+    }
+    button{
+        border:none;
+        background-color: white;
+        box-shadow: none;
+        padding: 10px;
+        position: relative;
+        top: -40px;
+        left: 70px;
+        font-family: monserrat;
+        font-size: 25px;
+        color: rgb(95, 95, 95);
+        font-weight:bold;
+
+    }
+    .button1{
+        border:none;
+        background-color: white;
+        box-shadow: none;
+        padding: 10px;
+        left: 340px;
+        position: relative;
+        font-family: monserrat;
+        font-size: 16px;
+        color: gray;
+        font-weight:normal;
+    }
+    .Fin{
+        font-size: 22px;
+        color:rgb(71, 71, 71);
+        font-weight: normal;
+        border:1px solid;
+        border-radius: 20px;
+        border-color: rgb(224, 224, 224);
+        box-shadow:1px 3px 3px gray;
+        width:350px;
+        height: 90px;
+        padding-top: 14px;
+        text-align: center;
+        margin-top: 30px;
+        padding-bottom: 10px;
+        position: relative;
+        display: inline-block;
+    }
+    table{
+        border:1px solid gainsboro;
+        box-shadow:1px 3px 3px gray;
+        margin-top: 40px;
+        text-align: center;
+        height:100px; 
+        font-size: 20px;
+    }
+    td{
+        border:1px solid gainsboro;
+        width:70px;
+    }
+</style>
+
+<header class="header">
+    <img src='https://www.cinimex.ru/upload/medialibrary/f10/RGS_logo_cmyk_Red.png' onclick='document.location="rgz.html"' 
+    style="width:200px; height:50px; position:relative; top: -20px; padding:top -40px; cursor:pointer">
+    <button class="button" onclick="document.location='rgz.html'" 
+    style= "cursor:pointer">| О компании |</button>
+    <button class="button" onclick="document.location='rgz2.html'"
+    style= "cursor:pointer; color: rgb(139,0,0);">| Финансовые показатели |</button>
+    <button class="button" onclick="document.location='rgz3.html'" 
+    style= "cursor:pointer">| Контакты |</button>
+    <button class="button" onclick="document.location='rgz4.html'" 
+    style= "cursor:pointer">| Видео |</button>
+    <button class="button1"onclick="document.location='rgz5.html'" 
+    style= "cursor:pointer">Личный кабинет</button>
+</header>
+<div><hr size="0.5" width= "100%" margin-top='-20px' color="rgba(139, 0, 0, 0.233)">
+
+<body onload="Vycheslenia()">
+    <div style="font-size: 35px;margin-top: 30px;
+    color:rgb(139,0,0)">Основные финансовые показатели</div>
+   
+
+    <div class="Fin">
+    Капитализация на конец апреля<p style="font-size: 30px; 
+    color:rgb(139,0,0); margin-top: 15px;
+    display: inline-block; font-weight: bold;">107 005 517 764,019 ₽</p></div>
+
+    <div class="Fin">
+    Общее число акций на конец апреля<p style="font-size: 30px; 
+    color:rgb(139,0,0); margin-top: 15px; font-weight: bold;">
+    31 742 000 шт</p></div>
+
+    <div class="Fin">
+        Объем сделок на конец апреля<p style="font-size: 30px; 
+        color:rgb(139,0,0); margin-top: 15px; font-weight: bold;">
+        7 078 997 ₽</p></div>
+    
+    <div>
+        <p style="font-size: 20px; margin-bottom: -25px;
+        margin-top: 30px; color:rgb(139,0,0)">Цены закрытия торгов на апрель 2023 года:</p>
+        <table>
+            <tr style="background-color: rgb(252, 247, 247);">
+                <td style="background-color: rgb(224, 224, 224);">Дата</td>
+                <td>03.04</td>
+                <td>04.04</td>
+                <td>05.04</td>
+                <td>06.04</td>
+                <td>07.04</td>
+                <td>10.04</td>
+                <td>11.04</td>
+                <td>12.04</td>
+                <td>13.04</td>
+                <td>14.04</td>
+                <td>17.04</td>
+                <td>18.04</td>
+                <td>19.04</td>
+                <td>20.04</td>
+                <td>21.04</td>
+                <td>24.04</td>
+                <td>25.04</td>
+                <td>26.04</td>
+                <td>27.04</td>
+                <td>28.04</td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(224, 224, 224);">Цена</td>
+                <td>0,1998</td>
+                <td>0,2034</td>
+                <td>0,2198</td>
+                <td>0,2298</td>
+                <td>0,2252</td>
+                <td>0,2304</td>
+                <td>0,2264</td>
+                <td>0,2306</td>
+                <td>0,229</td>
+                <td>0,228</td>
+                <td>0,2256</td>
+                <td>0,252</td>
+                <td>0,241</td>
+                <td>0,2376</td>
+                <td>0,2426</td>
+                <td>0,2398</td>
+                <td>0,2292</td>
+                <td>0,23</td>
+                <td>0,23</td>
+                <td>0,22</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="Fin">
+        Максимальная цена<p style="font-size: 30px; 
+        color:rgb(139,0,0); margin-top: 15px; font-weight: bold;">
+        <span id="max"></span> ₽</p></div>
+
+    <div class="Fin">
+        Минимальная цена<p style="font-size: 30px;
+        color:rgb(139,0,0); margin-top: 15px; font-weight: bold;">
+        <span id="min"></span> ₽</p></div>
+
+    <div class="Fin">
+        Среднеквадратическое отклонение<p style="font-size: 30px;
+        color:rgb(139,0,0); margin-top: 15px; font-weight: bold;">
+        <span id="sre">-</span></p></div>
+        
+    <div style="font-size: 19px; width:1300px; color:gray;
+     margin-top:50px;">
+    СК «Росгосстрах» по итогам девяти месяцев 2020 г. вошла в 
+    топ-10 крупнейших компаний отечественного страхового рынка. 
+    На лидеров отрасли пришлось более 72% всей премии, собранной 
+    в январе-сентябре 2020 г. При этом наблюдается тенденция к 
+    cокращению количества страховых компаний.</div>
+
+
+    <div id="stock"></div>
+    <div id="average"></div>
+    <div id="max"></div>
+    <div id="min"></div>
+    <div id="sre"></div>
+
+</body>
